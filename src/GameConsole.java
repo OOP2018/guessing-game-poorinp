@@ -1,24 +1,28 @@
 import java.util.Scanner;
 
-/** 
- *  Play guessing game on the console.
- */
 public class GameConsole {
-
-	/** play the game. */
-	public int play(NumberGame game) {
-		Scanner console = new Scanner(System.in);
-		
-		// describe the game
-		System.out.println( game.toString() );
-		
-		// This is just an example.
-		System.out.println( game.getMessage() );
-		System.out.print("Your answer? ");
-		int guess = console.nextInt();
-		boolean correct = game.guess(guess);
-		System.out.println( game.getMessage() );
-		return guess;
-	}
 	
+	/**
+	 * The play method plays a game using input from a user.
+	 * @param game is class that method play() run on
+	 * @return number that is the secret number
+	 */
+	public int play( NumberGame game ) {
+		Scanner console = new Scanner(System.in);
+		System.out.println( game.toString() );
+		System.out.println( game.getMessage() );
+		boolean check = true ;
+		int number = 0 ;
+		while ( check ) {
+			System.out.print("Your answer? ");
+			int guess = console.nextInt();
+			number = guess ;
+			if ( game.guess(number) == true ) {
+				System.out.println( game.getMessage() );
+				break ;
+			}
+			System.out.println( game.getMessage() );
+		}
+		return number ;
+	}
 }
