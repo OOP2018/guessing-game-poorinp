@@ -21,9 +21,11 @@ public class GameSolver {
 			game.guess(number) ;
 			if ( game.getMessage().contains("large")) {
 				max = number ;
+				number = (int) (Math.random()*range)+min ;
 			}
 			else if ( game.getMessage().contains("small")) {
 				min = number ;
+				number = (int) (Math.random()*range)+min ;
 			}
 			else if ( game.getMessage().contains("Right")) {
 				break ;

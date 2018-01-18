@@ -9,7 +9,7 @@ public class Main {
 //		System.out.println( "play() returned "+solution );
 //		System.out.println( "You guesses "+game.getCount()+" times" );
 		
-		NumberGame game = new PoorinGame( 100 ) ;
+		NumberGame game = new PoorinGame( 2 ) ;
 		GameSolver ui = new GameSolver() ;
 		int solution = ui.play(game) ;
 		System.out.println( "play() returned "+solution );
