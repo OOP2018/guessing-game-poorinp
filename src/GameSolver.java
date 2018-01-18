@@ -15,7 +15,7 @@ public class GameSolver {
 		int min = 1 ;
 		int number = 0 ;
 		boolean check = true ;
-		while (check == true ) {
+		while (check) {
 			int range = max-min+1 ;
 			number = (int) (Math.random()*range)+min ;
 			game.guess(number) ;
