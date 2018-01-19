@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * Automatically find the secret to any NumberGame.
  */
@@ -11,21 +13,23 @@ public class GameSolver {
 	 * @return the secret number
 	 */
 	public int play( NumberGame game ) {
+		long seed = System.nanoTime() ;
+		Random rand = new Random( seed ) ;
 		int max = game.getUpperBound() ;
 		int min = 1 ;
-		int number = 0 ;
+		int range = (max-min)+1;
 		boolean check = true ;
+		int number = rand.nextInt(range) + 1;
 		while (check) {
-			int range = ((max-min)/2) + min ;
-			number = (int) (Math.random()*range)+min ;
+			
 			game.guess(number) ;
 			if ( game.getMessage().contains("large")) {
-				max = number ;
-				number = (int) (Math.random()*range)+min ;
+				max = number - 1 ;
+				number = rand.nextInt(range) + min ;
 			}
 			else if ( game.getMessage().contains("small")) {
-				min = number ;
-				number = (int) (Math.random()*range)+min ;
+				min = number + 1 ;
+				number = rand.nextInt(range) + min ;
 			}
 			else {
 				break ;
