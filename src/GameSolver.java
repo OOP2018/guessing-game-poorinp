@@ -16,7 +16,7 @@ public class GameSolver {
 		int number = 0 ;
 		boolean check = true ;
 		while (check) {
-			int range = max-min+1 ;
+			int range = ((max-min)/2) + min ;
 			number = (int) (Math.random()*range)+min ;
 			game.guess(number) ;
 			if ( game.getMessage().contains("large")) {
