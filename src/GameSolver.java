@@ -27,7 +27,7 @@ public class GameSolver {
 				min = number ;
 				number = (int) (Math.random()*range)+min ;
 			}
-			else if ( game.getMessage().contains("Right")) {
+			else {
 				break ;
 			}
 		}
