@@ -11,16 +11,27 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+/**
+ * Create the UI for count the number that users guessed the number.
+ * @author Poorin Pichayamongkol
+ */
 public class CounterView extends Stage implements Observer{
 
 	private Counter counter;
 	private Label label;
 	
+	/**
+	 * Initialize the UI from Counter.
+	 * @param counter that count the number of times that users guessed
+	 */
 	public CounterView(Counter counter) {
 		this.counter = counter;
 		initComponents();
 	}
 	
+	/**
+	 * Create the UI for Counter.
+	 */
 	public void initComponents() {
 		HBox root = new HBox();
 		root.setPadding(new Insets(10));
@@ -36,16 +47,25 @@ public class CounterView extends Stage implements Observer{
 		this.sizeToScene();
 	}
 	
+	/**
+	 * Update and display in UI window of Counter.
+	 */
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		displayCount();		
 	}
 	
+	/**
+	 * Show the UI of Counter.
+	 */
 	public void run() {
 		this.show();
 		displayCount();
 	}
 	
+	/**
+	 * Display the number that users guessed.
+	 */
 	public void displayCount() {
 		label.setText( String.format("%2d", counter.getCount()) );
 	}

@@ -1,4 +1,4 @@
-import PoorinGame;
+package src;
 
 public class Main {
 	

@@ -8,8 +8,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
+/**
+ * Run the main sources and UI from sources.
+ * @author Poorin Pichayamongkol
+ */
 public class Main extends Application {
+	
+	/**
+	 * Find and load and call all Observer and Observable then set the scene and stage. 
+	 */
 	@Override
 	public void start(Stage stage) {
 		Counter counter = new Counter();
