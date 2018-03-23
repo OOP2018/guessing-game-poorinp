@@ -20,11 +20,8 @@ public class GameSolver {
 		int max = game.getUpperBound() ;
 		int min = 1 ;
 		int range = (max-min)+1;
-		boolean check = true ;
 		int number = rand.nextInt(range) + 1;
-		while (check) {
-			
-			game.guess(number) ;
+		while (!game.guess(number)) {
 			if ( game.getMessage().contains("large")) {
 				max = number - 1 ;
 				number = rand.nextInt(range) + min ;
